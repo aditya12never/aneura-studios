@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aneurastudio | Creative Services Menu</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind with new Elegant/Ivory palette --><script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // New Palette: Ivory, Charcoal, Beige (Elegant & Luxurious)
+                        'bg-ivory': '#F9F6F3', // Ivory (Background)
+                        'text-charcoal': '#5E514D', // Deep Charcoal (Logo Text, Headings)
+                        'accent-beige': '#D4C2B0', // Beige (Accent, Buttons, Icons)
+                        'accent-hover': '#C1AFA2', // Slightly darker beige for hover
+                        'card-light': '#F3F0EC', // Slightly darker ivory for contrast cards
+                        'text-soft': '#7A6B66', // Softer charcoal/gray for body text
+                    },
+                    fontFamily: {
+                        // Using Inter but giving it a serif fallback for a more refined feel
+                        sans: ['Inter', 'serif'], 
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        /* Custom gradient for hero text emphasis - soft charcoal to muted beige */
+        .text-gradient {
+            background-image: linear-gradient(45deg, #5E514D, #9D8D7E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* 1. Subtle Texture for Eye-Catchy Background (Crispy) */
+        .textured-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e5e1dd' fill-opacity='0.5'%3E%3Cpath fill-rule='evenodd' d='M0 0h3v3H0V0zm3 3h3v3H3V3z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Menu Item Styling Removed - Now using Tailwind classes on service-card for crispness */
+        .menu-category h3 {
+            border-bottom: 2px solid #D4C2B0; 
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Animation Utility Classes (for scroll reveal) */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Initial Hero Fade-In */
+        .hero-title, .hero-subtitle {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .hero-title { animation-delay: 0.2s; }
+        .hero-subtitle { animation-delay: 0.4s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body class="bg-bg-ivory text-text-soft font-sans antialiased">
+
+    <!-- Header & Navigation --><header class="sticky top-0 z-50 bg-bg-ivory/90 backdrop-blur-sm shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo Text: Deep Charcoal with Beige Accent --><a href="#" class="text-2xl font-extrabold tracking-tight text-text-charcoal">Aneurastudio<span class="text-accent-beige">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <!-- Navigation Links for Menu Sections --><a href="#video" class="text-text-soft hover:text-accent-beige transition duration-300">Video</a>
+                <a href="#photo" class="text-text-soft hover:text-accent-beige transition duration-300">Photo</a>
+                <a href="#design" class="text-text-soft hover:text-accent-beige transition duration-300">Design</a>
+                <a href="#web" class="text-text-soft hover:text-accent-beige transition duration-300">Web</a>
+            </div>
+            <button class="md:hidden text-text-charcoal p-2 rounded-lg hover:bg-card-light transition duration-300">
+                <!-- Hamburger Icon --><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        
+        <!-- Hero Section - Introduction to the Menu --><section class="py-20 md:py-24 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- NEW ATTENTION GRABBER: Slogan above headline -->
+            <p class="text-sm font-semibold tracking-widest text-accent-beige uppercase mb-2 hero-subtitle">
+                Luxury Design. Pixel-Perfect Recreation. Instant Impact.
+            </p>
+
+            <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight tracking-tighter mb-4 hero-title">
+                <span class="text-gradient block">We don't just create.</span>
+                <span class="text-text-charcoal block">We recreate anything.</span>
+            </h1>
+            <p class="text-xl text-text-soft max-w-3xl mx-auto hero-subtitle">
+                Bring us any reference—a video, a design, a website, or a graphic—and we will deliver an identical (or improved) final product.
+            </p>
+        </section>
+
+        <!-- Menu Section - Now uses subtle texture and interactive cards --><section class="py-16 bg-card-light textured-bg">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Helper function for repeated service card structure -->
+                <script>
+                    // Helper function is not used in the final HTML structure, but this is a note that the design uses repeated card logic.
+                </script>
+
+                <!-- I. Video Production & Editing --><div id="video" class="menu-category mb-16 scroll-reveal">
+                    <h3 class="text-3xl font-bold text-text-charcoal">I. Video Recreation & Editing</h3>
+                    
+                    <!-- Service Card: Cinematic Editing -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Cinematic Editing & Professional Color Grading</span>
+                            <span class="text-sm text-text-soft/80">Applying film-look edits, advanced color correction, and consistent grading to match any cinematic reference.</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card: Short-Form Content -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Short-Form Content Recreation (Reels, TikToks, Shorts)</span>
+                            <span class="text-sm text-text-soft/80">Replicating viral styles, trend editing, and dynamic cuts for maximum engagement across social platforms.</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card: Reference Recreation -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Reference Recreation (up to 5 min)</span>
+                            <span class="text-sm text-text-soft/80">Replicating a video based on your provided reference, including matching style, cuts, and music tempo.</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card: Advanced Visual Effects -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Advanced Visual Effects Match (per min)</span>
+                            <span class="text-sm text-text-soft/80">Matching complex motion graphics, screen replacement, or cinematic grading from high-budget content.</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card: Creator Monthly Retainer -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Creator Monthly Retainer</span>
+                            <span class="text-sm text-text-soft/80">Dedicated resources for continuous recreation and editing needs.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- II. Photo Editing & Retouching --><div id="photo" class="menu-category mb-16 scroll-reveal">
+                    <h3 class="text-3xl font-bold text-text-charcoal">II. Photo Recreation & Retouching</h3>
+                    
+                    <!-- Service Card: Advanced Photo Color Grading -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Advanced Photo Color Grading & Tonal Match (per image)</span>
+                            <span class="text-sm text-text-soft/80">Precise application of color grading, tonal mapping, and stylistic effects to match any provided reference image.</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card: Photo Compositing -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Photo Compositing & Image Blending</span>
+                            <span class="text-sm text-text-soft/80">Seamlessly blending and combining multiple photos into a single, cohesive, and hyper-realistic composite image.</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card: Heirloom Photo Restoration -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Heirloom Photo Restoration & Colorization</span>
+                            <span class="text-sm text-text-soft/80">Repairing damage, removing cracks, and optionally adding historically accurate color to vintage and damaged photographs.</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card: Flawless Portrait -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Flawless Portrait & Beauty Recreation</span>
+                            <span class="text-sm text-text-soft/80">High-end, undetectable retouching to match magazine-quality standards.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- III. Digital Design & Graphics --><div id="design" class="menu-category mb-16 scroll-reveal">
+                    <h3 class="text-3xl font-bold text-text-charcoal">III. Digital Design & Graphics</h3>
+                    
+                    <!-- Service Card: Custom Illustration -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Custom Illustration & Art Recreation</span>
+                            <span class="text-sm text-text-soft/80">Recreating existing artistic styles or developing unique illustrations based on detailed concepts and references.</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card: Custom Invitation -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Custom Invitation & Stationery Design</span>
+                            <span class="text-sm text-text-soft/80">Recreating the aesthetic, typography, and premium textures of any physical or digital invitation suite (wedding, event, corporate).</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card: Reference Graphic Design -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Reference Graphic Design (per graphic)</span>
+                            <span class="text-sm text-text-soft/80">Replicating the layout, typography, and visual assets of any static graphic or advertising piece.</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card: Logo & Brand Identity -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Logo & Brand Identity Recreation</span>
+                            <span class="text-sm text-text-soft/80">Developing a full brand identity suite based on a provided style or competitor's identity.</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card: High-Fidelity Document -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">High-Fidelity Document Layout Replication</span>
+                            <span class="text-sm text-text-soft/80">Recreating the exact layout, typography, and visual structure of complex forms or documents for template or display purposes (non-fraudulent use only).</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- IV. Web & Code Services - Price Information Removed --><div id="web" class="menu-category mb-16 scroll-reveal">
+                    <h3 class="text-3xl font-bold text-text-charcoal">IV. Web & Code Recreation</h3>
+                    
+                    <!-- Service Card: Landing Page Clone -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Landing Page Clone & Code</span>
+                            <span class="text-sm text-text-soft/80">Recreating the design, responsiveness, and front-end functionality of any single web page.</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card: Full Website UI/UX -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Full Website UI/UX Match</span>
+                            <span class="text-sm text-text-soft/80">Replicating a multi-page website's user interface, experience, and custom component library.</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card: Custom Feature Replication -->
+                    <div class="p-4 rounded-xl bg-bg-ivory shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] mb-4 border border-accent-beige/30 cursor-pointer">
+                        <div class="flex flex-col text-left">
+                            <span class="text-lg font-semibold text-text-charcoal">Custom Feature Replication</span>
+                            <span class="text-sm text-text-soft/80">Rebuilding a specific, complex interactive feature (e.g., custom form, data filter, 3D viewer) from a reference site.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact/CTA Section - Uses Beige tint for soft focus --><section id="contact" class="py-20 bg-accent-beige/30 border-t border-b border-accent-beige/50 scroll-reveal">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                
+                <!-- START: New Wrapper Card for all Content and Options -->
+                <div class="bg-bg-ivory p-8 md:p-12 rounded-2xl shadow-2xl border border-accent-beige/50 max-w-2xl mx-auto">
+                    
+                    <h2 class="text-4xl font-bold text-text-charcoal mb-4">Trust Aneurastudio: Guaranteed Precision.</h2>
+                    <p class="text-xl text-text-soft mb-8">
+                        Your project details are handled with complete confidentiality. Contact us now to discuss your custom vision.
+                    </p>
+                    
+                    <!-- Contact Options Container (Button and Menu) -->
+                    <div class="relative max-w-sm mx-auto text-left">
+                        
+                        <!-- Dropdown Menu (hidden by default) -->
+                        <div id="contact-menu" class="absolute top-full w-full mt-4 origin-top transition duration-300 ease-out opacity-0 scale-y-0 rounded-xl shadow-2xl bg-card-light border border-accent-beige/50 overflow-hidden">
+                            
+                            <!-- Horizontal Flex Container with Dividers -->
+                            <div class="flex py-1 divide-x divide-accent-beige/50">
+                                <!-- WhatsApp Link (Updated with 8712213015) -->
+                                <a href="https://wa.me/+918712213015" target="_blank" class="flex flex-col items-center flex-1 px-4 py-3 text-sm text-text-charcoal font-medium hover:bg-accent-beige/50 transition duration-150">
+                                    <span class="text-xl mb-1">💬</span> WhatsApp
+                                </a>
+                                <!-- Gmail Link (Your Email) -->
+                                <a href="mailto:cineframedesigns@gmail.com" class="flex flex-col items-center flex-1 px-4 py-3 text-sm text-text-charcoal font-medium hover:bg-accent-beige/50 transition duration-150">
+                                    <span class="text-xl mb-1">📧</span> Email
+                                </a>
+                                <!-- Instagram Link (Your ID) -->
+                                <a href="https://www.instagram.com/aneurastudio/?utm_source=ig_web_button_share_sheet" target="_blank" class="flex flex-col items-center flex-1 px-4 py-3 text-sm text-text-charcoal font-medium hover:bg-accent-beige/50 transition duration-150">
+                                    <span class="text-xl mb-1">📸</span> Instagram
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Toggle Button -->
+                        <button id="contact-button" type="button" class="w-full text-center px-12 py-4 text-xl bg-text-charcoal text-bg-ivory font-bold rounded-xl shadow-[0_10px_20px_rgba(94,81,77,0.3)] hover:shadow-[0_15px_30px_rgba(94,81,77,0.5)] hover:bg-text-soft transition duration-300 transform hover:scale-[1.03]">
+                            Contact Us
+                        </button>
+                    </div>
+
+                </div>
+                <!-- END: New Wrapper Card -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer --><footer class="py-8 bg-card-light border-t border-accent-beige/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:flex md:justify-between md:items-center">
+            <p class="text-sm text-text-soft mb-4 md:mb-0">
+                &copy; 2025 Aneurastudio. All rights reserved.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-text-soft hover:text-accent-beige transition duration-300 text-sm">Terms & Conditions</a>
+                <a href="#" class="text-text-soft hover:text-accent-beige transition duration-300 text-sm">Service Agreements</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Scroll Reveal Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.scroll-reveal');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                // Adjust this threshold to control when the animation triggers (0.1 means 10% visibility)
+                threshold: 0.1 
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Contact Menu Toggle Logic (New)
+            const contactButton = document.getElementById('contact-button');
+            const contactMenu = document.getElementById('contact-menu');
+            
+            contactButton.addEventListener('click', (event) => {
+                event.stopPropagation(); // Stop click from propagating to the document listener below
+                contactMenu.classList.toggle('scale-y-0');
+                contactMenu.classList.toggle('opacity-0');
+            });
+            
+            // Close menu if user clicks anywhere outside the menu or button
+            document.addEventListener('click', (event) => {
+                const isMenuOpen = !contactMenu.classList.contains('scale-y-0');
+                
+                if (isMenuOpen && !contactButton.contains(event.target) && !contactMenu.contains(event.target)) {
+                    contactMenu.classList.add('scale-y-0', 'opacity-0');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
